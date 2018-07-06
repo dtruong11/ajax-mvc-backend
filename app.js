@@ -10,7 +10,7 @@ app.use(bodyParser.json())
 app.use(morgan('dev'))
 
 
-const postsRoutes = require('./routes/blog')
+const postsRoutes = require('./src/routes/blog')
 app.use('/posts', postsRoutes)
 
 // error handling
