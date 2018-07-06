@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const file = path.join(__dirname, 'data.json')
+const file = path.join(__dirname, './data.json')
 const shortid = require('shortid')
 const posts = JSON.parse(fs.readFileSync(file, 'utf-8'))
 
@@ -62,7 +62,7 @@ function destroy(id) {
     }
   }
   const post = posts.find(el => el.id === id)
-  return posts.slice(posts.indexOf(post), 1)
+  return posts.splice(posts.indexOf(post), 1)
 }
 
 
