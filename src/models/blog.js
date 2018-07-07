@@ -1,7 +1,6 @@
 const fs = require('fs')
 const path = require('path')
 const file = path.join(__dirname, './data.json')
-const shortid = require('shortid')
 
 // Validation functions
 const validateBody = require('./validate').validateBody
@@ -24,6 +23,7 @@ function getOne(id) {
 
 function create(body) {
   const posts = getAll()
+   const nextId = posts.reduce((acc, ele) => Math.max(acc, ele.id), -Infinity)
   const errors = validateBody(body)
   if (errors.length > 0) return {
     errors
@@ -31,7 +31,7 @@ function create(body) {
   const title = body.title
   const content = body.content
   const post = {
-    id: shortid.generate(),
+    id: nextId + 1,
     title,
     content
   }
