@@ -5,7 +5,7 @@ const posts = JSON.parse(fs.readFileSync(file, 'utf-8'))
 
 function checkPost(id) {
   const errors = []
-  const post = posts.find(el => el.id === id)
+  const post = posts.find(el => parseInt(el.id) === parseInt(id))
   if (!post) {
     errors.push({
       status: 404,
