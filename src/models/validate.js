@@ -1,11 +1,13 @@
-const fs = require('fs')
-const path = require('path')
-const file = path.join(__dirname, 'data.json')
-const posts = JSON.parse(fs.readFileSync(file, 'utf-8'))
+// const fs = require('fs')
+// const path = require('path')
+// const file = path.join(__dirname, 'data.json')
+const posts = require('./data')
+// const posts = JSON.parse(fs.readFileSync(file, 'utf-8'))
 
 function checkPost(id) {
   const errors = []
   const post = posts.find(el => parseInt(el.id) === parseInt(id))
+  console.log(post)
   if (!post) {
     errors.push({
       status: 404,
