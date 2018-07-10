@@ -1,7 +1,7 @@
 [{
   "id": "1",
-  "title": "Update Post 2",
-  "content": "oh yeah."
+  "title": "Testing",
+  "content": "somemore"
 }, {
   "id": "2",
   "title": "Update Post 2",
@@ -14,8 +14,4 @@
   "id": "4",
   "title": "Update Post 3",
   "content": "nothing to say..."
-}, {
-  "id": "5",
-  "title": "my world is blue",
-  "content": "haha!"
 }]
